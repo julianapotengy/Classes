@@ -11,17 +11,27 @@ namespace Raiz
         static void Main(string[] args)
         {
             Console.WriteLine("Digite um número para descobrir sua raiz quadrada aproximada");
-            int nR = int.Parse(Console.ReadLine());
-            int count = 0;
-
-            for (int i = 1; i <= nR; i+=2)
+            try
             {
-                nR -= i;
-                count++;
-            }
+                int nR = int.Parse(Console.ReadLine());
+                int count = 0;
 
-            Console.WriteLine("A raiz quadrada aproximada do número digitado é " + count);
-            Console.ReadLine();
+                for (int i = 1; i <= nR; i += 2)
+                {
+                    nR -= i;
+                    count++;
+                }
+
+                Console.WriteLine("A raiz quadrada aproximada do número digitado é " + count);
+                Console.ReadLine();
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("Erro");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
         }
     }
 }
